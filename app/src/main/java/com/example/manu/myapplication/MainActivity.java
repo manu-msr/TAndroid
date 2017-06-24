@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,13 +13,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    /* Botón de la vista.*/
-    private Button btn_cambiar;
-    /* Botón para cambiar de actividad. */
-    private  Button ir_lista;
-    /* Texto de la vista. */
-    private TextView tv_cambiar;
-    private EditText plain_text;
+    /* Texto para el correo electrónico. */
+    private EditText correo;
+    /* Texto para la contraseña. */
+    private EditText contrasenia;
+    /* Botón para iniciar la aplicación. */
+    private Button login;
 
     /**
      * Método que crea la vista. Cuando se crea la vista se hace esto. :D
@@ -30,28 +30,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         /* Inicializamos los atributos. */
-        btn_cambiar = (Button)findViewById(R.id.btn_cambiar);
-        ir_lista = (Button)findViewById(R.id.ir_lista);
-        tv_cambiar = (TextView)findViewById(R.id.tv_palabra);
-        plain_text = (EditText)findViewById(R.id.editText);
+        correo = (EditText)findViewById(R.id.correo);
+        contrasenia = (EditText)findViewById(R.id.contrasenia);
+        login = (Button)findViewById(R.id.login);
 
-        btn_cambiar.setOnClickListener(this);
-        ir_lista.setOnClickListener(this);
+        /* Asignamos el escucha al botón. */
+        login.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_cambiar:
-                String nombre = plain_text.getText().toString();
-                if (TextUtils.isEmpty(nombre))
-                    Toast.makeText(MainActivity.this, "Introduce un texto", Toast.LENGTH_SHORT).show();
-                else
-                    tv_cambiar.setText("Hola " + nombre);
-                break;
-            case R.id.ir_lista:
-                Intent intent = new Intent(this, ListaActivity.class);
-                startActivity(intent);
+            case R.id.login:
+                if (correo.getText().length() < 6 || contrasenia.getText().length() != 6)
+                    Toast.makeText(this, "Longitud inválida", Toast.LENGTH_SHORT).show();
+                else {
+                    Intent intent = new Intent(this, ListaActivity.class);
+                    startActivity(intent);
+                }
                 break;
         }
     }

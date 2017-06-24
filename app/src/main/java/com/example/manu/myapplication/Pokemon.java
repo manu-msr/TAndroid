@@ -9,6 +9,16 @@ public class Pokemon {
     private String tipo;
     private String url_imagen;
 
+    public String getUrl_video() {
+        return url_video;
+    }
+
+    public void setUrl_video(String url_video) {
+        this.url_video = url_video;
+    }
+
+    private String url_video;
+
     public Pokemon() {
     }
 

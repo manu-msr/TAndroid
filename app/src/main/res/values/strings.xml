@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="saludo">Oli :D</string>
+    <string name="bulbasaur">
+        A Bulbasaur es fácil verle echándose una siesta al sol. La semilla que tiene en el lomo va
+        creciendo cada vez más a medida que absorbe los rayos del sol.
+    </string>
+    <string name="charmander">
+        La llama que tiene en la punta de la cola arde según sus sentimientos. Llamea levemente
+        cuando está alegre y arde vigorosamente cuando está enfadado.
+    </string>
+    <string name="squirtle">
+        El caparazón de Squirtle no le sirve de protección únicamente. Su forma redondeada y las
+        hendiduras que tiene le ayudan a deslizarse en el agua y le permiten nadar a gran velocidad.
+    </string>
+    <string name="pikachu">
+        Cada vez que un Pikachu se encuentra con algo nuevo, le lanza una descarga eléctrica. Cuando
+        se ve alguna baya chamuscada, es muy probable que sea obra de un Pikachu, ya que a veces no
+        controlan la intensidad de la descarga.
+    </string>
 </resources>

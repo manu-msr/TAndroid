@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 /**
@@ -51,7 +53,7 @@ public class AdapterLista extends BaseAdapter {
 
         nombre.setText(seleccionado.getNombre());
         tipo.setText(seleccionado.getTipo());
-
+        Glide.with(context).load(seleccionado.getUrl_imagen()).into(foto);
         return view2;
     }
 }
