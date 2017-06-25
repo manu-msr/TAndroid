@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListaActivity" />
-        <activity android:name=".InfoPokemon"></activity>
+        <activity android:name=".InfoPokemonActivity"></activity>
     </application>
 
 </manifest>

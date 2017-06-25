@@ -1,14 +1,11 @@
 package com.example.manu.myapplication;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,12 +25,16 @@ public class ListaActivity extends AppCompatActivity {
 
         Pokemon sqr = new Pokemon("Squirtle", "Agua", "https://s-media-cache-ak0.pinimg.com/736x/a7/76/60/a776601ff59d6e9a9a5663c327ed3624.jpg");
         sqr.setUrl_video("https://youtu.be/YOtBpURJF7E");
+        sqr.setInformación(R.string.squirtle);
         Pokemon chm = new Pokemon("Charmander", "Fuego", "https://pbs.twimg.com/media/CV-h81TW4AAPB9_.jpg");
-        chm.setUrl_video("#");
+        chm.setUrl_video("https://www.youtube.com/watch?v=RwF01l-mijk");
+        chm.setInformación(R.string.charmander);
         Pokemon blb = new Pokemon("Bulbasaur", "Hierba", "http://i2.kym-cdn.com/photos/images/original/001/095/359/34c.jpg");
-        blb.setUrl_video("#");
+        blb.setUrl_video("https://www.youtube.com/watch?v=1iyFT6tieX4");
+        blb.setInformación(R.string.bulbasaur);
         Pokemon pkc = new Pokemon("Pikachu", "Electrico", "http://i.imgur.com/Cx9HIjb.jpg");
-        pkc.setUrl_video("#");
+        pkc.setUrl_video("https://www.youtube.com/watch?v=EZcLB9yBzfg");
+        pkc.setInformación(R.string.pikachu);
 
         pokemones = new ArrayList<>();
         pokemones.add(sqr);
@@ -47,17 +48,8 @@ public class ListaActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Pokemon seleccionado = pokemones.get(i);
-                //Toast.makeText(ListaActivity.this, seleccionado.getNombre(), Toast.LENGTH_SHORT).show();
-                //Snackbar.make(view,seleccionado.getNombre(),Snackbar.LENGTH_SHORT).show();
-                //Snackbar snackbar = Snackbar.make(view, seleccionado.getNombre(), Snackbar.LENGTH_SHORT);
-                //snackbar.getView().setBackgroundColor(getResources().getColor(R.color.primary_text));
-                //snackbar.show();
-                //Intent intet = new Intent(Intent.ACTION_VIEW, Uri.parse(seleccionado.getUrl_video()));
-                //startActivity(intet);
-                Intent intent = new Intent(ListaActivity.this, InfoPokemon.class);
-                intent.putExtra("nombre", seleccionado.getNombre());
-                intent.putExtra("foto", seleccionado.getUrl_imagen());
-                intent.putExtra("video", seleccionado.getUrl_video());
+                Intent intent = new Intent(ListaActivity.this, InfoPokemonActivity.class);
+                intent.putExtra("pokemon", seleccionado);
                 startActivity(intent);
             }
         });

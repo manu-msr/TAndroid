@@ -1,13 +1,24 @@
 package com.example.manu.myapplication;
 
+import java.io.Serializable;
+
 /**
  * Created by manu on 13/06/17.
  */
 
-public class Pokemon {
+public class Pokemon implements Serializable {
     private String nombre;
     private String tipo;
     private String url_imagen;
+    private int informacion;
+
+    public int getInformacion() {
+        return informacion;
+    }
+
+    public void setInformación(int información) {
+        this.informacion = información;
+    }
 
     public String getUrl_video() {
         return url_video;
