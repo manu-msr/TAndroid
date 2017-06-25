@@ -19,7 +19,7 @@ public class InfoPokemonActivity extends AppCompatActivity implements View.OnCli
     private TextView nombre;
     private TextView info;
     private ImageView foto;
-    private Button boton;
+    private ImageView boton;
     private Bundle bundle;
     private Pokemon enviado;
 
@@ -32,7 +32,7 @@ public class InfoPokemonActivity extends AppCompatActivity implements View.OnCli
         nombre = (TextView)findViewById(R.id.nombrePokemon);
         info = (TextView)findViewById(R.id.InfoPokemon);
         foto = (ImageView)findViewById(R.id.FotoPokemon);
-        boton = (Button)findViewById(R.id.VideoPokemon);
+        boton = (ImageView) findViewById(R.id.VideoPokemon);
 
         bundle = getIntent().getExtras();
         enviado = (Pokemon)bundle.get("pokemon");
